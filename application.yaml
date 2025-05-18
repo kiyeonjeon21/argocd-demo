@@ -11,7 +11,7 @@ spec:
     targetRevision: HEAD
     path: dev
   destination: 
-    server: https://api.68286efc72e3ace643608b23.ap1.techzone.ibm.com:6443
+    server: https://kubernetes.default.svc
     namespace: myapp
 
   syncPolicy:
