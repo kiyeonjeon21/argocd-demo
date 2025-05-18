@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp-argo-application
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/kiyeonjeon21/argocd-demo
+    targetRevision: HEAD
+    path: dev
+  destination: 
+    server: https://api.68286efc72e3ace643608b23.ap1.techzone.ibm.com:6443
+    namespace: myapp
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
